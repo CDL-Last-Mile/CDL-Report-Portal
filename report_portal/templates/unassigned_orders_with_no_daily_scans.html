@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style>
+        table {
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        th, td {
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {background-color: aquamarine;}
+        tr:nth-child(odd) {background-color: aqua}
+        </style>
+</head>
+<body>
+    <h2>Open With No Scan In 48 Hours Summary</h2>
+
+    <p>Find the report summary for {{ day_of_report}} below. A detail report has been attached to this email.</p>
+
+    <div id="container">
+        <table style="border-collapse: collapse; width: 100%;">
+            <thead style="width: 100%;">
+                <tr style="width: 100%;">
+                    <th style="text-align: left;padding: 8px;">Order Count</th>
+                    <th style="text-align: center;padding: 8px;">Driver No</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for col in summary %}
+                        <tr>
+                            <td style="text-align: left;padding: 8px;">{{col['order_count']}}</td>
+                            <td style="text-align: center;padding: 8px;">{{col['dc_segment']}}</td>
+                        </tr>
+                {% endfor %}
+            </tbody>  
+          </table>
+    </div>
+    
+</body>
+</html>

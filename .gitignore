@@ -1,0 +1,8 @@
+cdl_report_portal/*
+/cdl_report_portal
+cdl_report_portal/
+__pycache__/
+*.xlsx
+*.log
+web.config
+.env
